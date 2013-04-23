@@ -187,6 +187,13 @@ class EventHandler
 	public function handleEvent(event:Event):void
 	{
 		var handlerArgs:Array = [];
+		// handle case where no argument expected.
+		// no property selected in tag and event not expected as an argument 
+		if (args == null)
+		{
+			handler();
+			return;
+		}
 
 		for each(var arg:String in args)
 		{
